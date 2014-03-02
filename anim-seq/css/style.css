@@ -48,10 +48,19 @@
 			border-radius:15px;
 		}
 		h1{
-			position:absolute;
-			color:white;
-			left:80px;
-			top:0px;
-			font-size:90px;
-			font-family:Arial, Helvetica, sans-serif;
+			 color: #FF0000;
+		    font-family: 'Trade Winds',monospace;
+		    font-size: 3em;
+		    left: 105px;
+		    position: absolute;
+		    top: 41px;
+		}
+		input[type="button"]{
+			min-width: 70px;
+			border-radius:5px 5px 5px;
+			border:1px solid gray; 
+			height:30px;
+			margin: 10px 10px 0;
+			cursor: pointer;
+			font-weight: bold;
 		}
