@@ -1,0 +1,112 @@
+.logo{
+    
+}
+.logo > .cloud{
+	background-color: red;
+}
+.logo > .highlight{
+	background-color: white;
+}
+.bg1{
+	  border-radius: 33px;
+    height: 67px;
+    position: absolute;
+    top: 33px;
+    width: 109px;
+}
+.bg2{
+	border-radius: 50px;
+    height: 100px;
+    left: 40px;
+    position: absolute;
+    top: 0;
+    width: 100px;
+}
+.bg3{
+  border-radius: 42px;
+    height: 59px;
+    left: 67px;
+    position: absolute;
+    top: 41px;
+    width: 98px;
+}	
+.hl1{
+  border-radius: 31px;
+    height: 61px;
+    left: 9px;
+    position: absolute;
+    top: 35px;
+    width: 63px;
+    z-index: 3;
+}
+.hl1 > .mask{
+	  background-color: #FF0000;
+    border-radius: 30px;
+    height: 62px;
+    margin-left: 0;
+    margin-top: 3px;
+    position: absolute;
+    width: 65px;
+    z-index: 3;;
+}
+.hl2{
+	 border-radius: 50px;
+    height: 87px;
+    left: 42px;
+    position: absolute;
+    top: 4px;
+    width: 94px;
+    z-index: 2;
+}
+.hl2 > .mask{
+	 background-color: #FF0000;
+    border-radius: 47px;
+    height: 94px;
+    margin-left: -2px;
+    margin-top: -1px;
+    position: absolute;
+    width: 94px;
+    z-index: 1;
+}
+.hl3{
+border-radius: 31px;
+    height: 54px;
+    left: 109px;
+    position: absolute;
+    top: 43px;
+    width: 54px;
+    z-index: 1;
+}
+.hl3 > .mask{
+	  background-color: #FF0000;
+    border-radius: 30px;
+    height: 57px;
+    margin-left: -3px;
+    margin-top: -1px;
+    position: absolute;
+    width: 55px;
+    z-index: 1;
+}
+
+.hl4{
+ border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 9px;
+    height: 15px;
+    left: 19px;
+    position: absolute;
+    top: 82px;
+    width: 127px;
+    z-index: 4;
+}
+.hl4 > .mask{
+   background-color: #FF0000;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 4px;
+    display: block;
+    height: 17px;
+    margin-left: -3px;
+    margin-top: -4px;
+    position: absolute;
+    width: 131px;
+    z-index: 1;
+}

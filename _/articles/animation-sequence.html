@@ -1,0 +1,144 @@
+<div>
+<h2>Creating Custom animation with JQuery</h2>
+  <p>In this tutorial we will create an animation sequence using HTML5, CSS3 and Javascrip. The objective of this turorial is to create instresting looping animation without using flash.</p>
+<p>Final output</p>
+<style>
+	.anim-seq-tut .box{
+		width: 50px;
+		height: 50px;
+		float:left;
+		position: relative;
+		border-radius: 25px;
+		/*opacity: 0;*/
+	}
+	.anim-seq-tut .box:nth-child(even){
+		background-color: red;
+	}
+	.anim-seq-tut .box:nth-child(odd){
+		background-color: yellow;
+	}
+	.anim-seq-tut .box:nth-child(1){
+		/*margin-bottom: 100px;*/
+		
+	}
+	.anim-seq-tut .box:nth-child(5),
+	.anim-seq-tut .box:nth-child(6),
+	.anim-seq-tut .box:nth-child(7){
+		clear:both;
+		float: right;
+		
+	}
+	.anim-seq-tut .box:nth-child(8),
+	.anim-seq-tut .box:nth-child(9),
+	.anim-seq-tut .box:nth-child(10){
+		
+		float: right;
+		
+	}
+	.anim-seq-tut .box:nth-child(11){
+		clear: both;
+		margin-top: -100px;
+	}
+	.anim-seq-tut .box:nth-child(12){
+		clear: both;
+		margin-top: -150px;
+	}
+	.anim-seq-tut .anim-seq-tut{
+		height:200px;
+		width: 200px;
+		border:1px solid;
+		position: relative;
+		border: 10px solid;
+/*		border-radius: 100px;*/
+		overflow: hidden;
+	}
+	</style>
+	<script type="text/javascript">
+		
+
+			var len =  $(".box").length;
+			var counter = -1;
+			var effects = [
+				{
+					backgroundColor:"red"
+					
+				},
+				{
+					backgroundColor:"yellow"
+				}
+			];
+			var canPlay = false;
+			var start;
+			var end;
+			var speed = 50;
+			var obj ={
+				animationSequence:function(){
+					if(!canPlay)return;
+					var start = effects[0];
+					var end = effects[1];
+
+					if(counter < len-1){
+						var scope = obj;
+						
+						counter++;
+						var elem = $(".anim-seq-tut .box").eq(counter);
+						animate(scope, elem, start, end, speed,obj.animationSequence )
+					}else{
+						counter = -1;
+						effects[0] = end;
+						effects[1] = start;
+						obj.animationSequence()  
+					}
+				}	
+			}
+
+		
+				function animate(_scope,_elem, _start, _end, _speed, _callback){
+					var callback = _callback;
+					var scope = _scope;
+					$(_elem).css(_start);
+					$(_elem).animate(
+						_end,_speed,function(){
+							// console.log(scope);
+							callback.apply(scope);
+						}
+					);
+				}
+			
+
+			$(".anim-seq-tut input#start").click(function(){
+				alert('canPlay - '+canPlay);
+				if(!canPlay){
+					canPlay = true;
+					obj.animationSequence();
+				}
+			})
+			$(".anim-seq-tut input#stop").click(function(){
+				canPlay = false;
+			})
+
+	
+	</script>
+</head>
+<body>
+	<div class="anim-seq-tut">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<!-- <div class="box"></div> -->
+		<!-- <div class="box"></div> -->
+		<!-- <div class="box"></div> -->
+		<!-- <div class="box"></div> -->
+	</div>
+	<input id="start" type="button" value="start">
+	<input id="stop" type="button" value="stop">
+</div>
