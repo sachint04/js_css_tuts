@@ -2,118 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+
 	<title>Document</title>
-	<style>
-		.box{
-			width: 30px;
-			height: 30px;
-			float:left;
-			position: relative;
-			border-radius: 25px;
-			border:10px solid black;
-		}
-		.box:nth-child(even){
-			background-color: red;
-		}
-		.box:nth-child(odd){
-			background-color: yellow;
-		}
-		.box:nth-child(11),
-		.box:nth-child(12),
-		.box:nth-child(13){
-			clear:both;
-			float: right;
-		}
-		.box:nth-child(14),
-		.box:nth-child(15),
-		.box:nth-child(16),
-		.box:nth-child(17),
-		.box:nth-child(18),
-		.box:nth-child(19),
-		.box:nth-child(20),
-		.box:nth-child(21){
-			float: right;
-			
-		}
-		.box:nth-child(23){
-			clear: both;
-			margin-top: -100px;
-		}
-		.box:nth-child(24){
-			clear: both;
-			margin-top: -150px;
-		}
-		.container{
-			height:200px;
-			width: 500px;
-			border:1px solid;
-			position: relative;
-			border: 5px solid;
-			overflow: hidden;
-			background-color:black;
-			border-radius:15px;
-		}
-		h1{
-			position:absolute;
-			color:white;
-			left:80px;
-			top:0px;
-			font-size:90px;
-			font-family:Arial, Helvetica, sans-serif;
-		}
-	</style>
-	<!-- add JQuery to page -->
-	<script src="js/jquery-1.8.3.js"  ></script>
+	<link rel="stylesheet" href="css/style.css">
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			//define parameters
-			var len =  $(".box").length;
-			var counter = -1;
-			var canPlay = false;
-			var start;
-			
-			var effects = [ {backgroundColor:"red"},
-							{backgroundColor:"yellow"}];
-		
-		// Initiate animation sequence
-			var	initSequence = function(){
-				if(!canPlay)return;
-				if(counter < len-1){
-					counter++;
-					animate($(".box").eq(counter), effects[0], effects[1])
-				}else{
-					//swap styles in effects array
-					counter = -1;
-					effects.reverse();
-					initSequence();  
-				}
-			}	
-
-			// execute animate function on Element  
-			function animate(_elem, _start, _end){
-				$(_elem).css(_start);//set default state;
-				//initiate animation
-				$(_elem).animate(
-					_end,50,function(){
-						initSequence();
-					}
-				);
-			}
-			
-			//Define click events for "Start" and "Stop" button
-			$("input#start").click(function(){
-				if(!canPlay){
-					canPlay = true;
-					initSequence();
-				}
-			})
-			$("input#stop").click(function(){
-				canPlay = false;
-			})
-			
-		})
-	</script>
 </head>
 <body>
 	<div class="container">
@@ -145,5 +37,7 @@
 	<h1>D</h1>	
 	<input id="start" type="button" value="start">
 	<input id="stop" type="button" value="stop">
+	<script href="../_/js/jquery-1.8.3.js"/>
+	<script href="js/setup.js"></script>
 </body>
 </html>
