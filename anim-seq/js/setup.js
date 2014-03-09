@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	alert("page loaded");
 	//define parameters
 	var len =  $(".box").length;
 	var counter = -1;

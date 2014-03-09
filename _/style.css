@@ -1,9 +1,20 @@
+/*
 body{
 	background: linear-gradient(to top, #ff0000 0%, #870000 60%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 	background: -webkit-linear-gradient(to bottom, #ff0000 0%, #870000 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 	background: -o-linear-gradient(to bottom, #ff0000 0%, #870000 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 	background: -mozs-linear-gradient(to bottom, #ff0000 0%, #870000 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
 }
+*/
+
+
+p{
+    padding:0px;
+}
+body{
+    background: #ffffff;
+}
+
 header{
 	margin-bottom: 10px;
 	margin-left: 170px;
@@ -13,13 +24,18 @@ header{
  color: #FF0000;
     font-family: monospace;
     font-size: 12px;
-    margin-left: 120px;
-    margin-top: -27px;
 }
 
+.left-panel{
+    border-right:1px solid gray;
+    padding:0px;
+}
+.left-panel img {
+    margin-left: 50px;
+    margin-top: 15px;
+}
 .brand{
     display: block;
-    height: 75px;
 }
 .brand img {
 	float: left;
@@ -29,7 +45,7 @@ header{
  	color: #FF0000;
     display: inline-block;
     font-family: 'Trade Winds',monospace;
-    font-size: 44px;
+    font-size: 28px;
     line-height: 100%;
     position: relative;
     vertical-align: bottom;
@@ -39,33 +55,36 @@ header{
 .left-panel .nav li{
 	text-align: right;
 }
-.nav a:hover{
-	color:#ffffff;
-	font-weight: bold;
-}
+
 nav ul:nth-child(1){
-	margin-top: 20px;
+	
 }
 
 .nav > li > a{
-	 color: #FFB573;
+	 /*color: #FFB573;*/
+    color: #ff0000;
     font-family: monospace;
     font-size: 16px;
-
+    text-decoration: underline;
 }
 .nav > li > a:hover, .nav > li > a:focus {
-     background-color: #330d01;
-     color: #ffb573;
+     background-color: #ffffff !important;
+     font-size: 22px;
+
 }
 
-.left-panel{
-	background-color: #A60000;
+nav{
+	/*background-color: #A60000;*/
+
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
-    margin-top: 30px;
     min-height: 300px;
     padding: 0px
 }
+.banner{
+    height: 180px;
+}
+
 article.include {
     padding: 5px 10px;
 }
@@ -86,9 +105,9 @@ article.include {
 .right-panel{
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
-	background-color:#015C65;
+	background-color:#A60000;
 	min-height: 200px;
-	margin-top: 30px;
+	margin-top: 180px;
 }
 
 /* -------------  Utility --------*/
